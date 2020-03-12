@@ -30,7 +30,15 @@ void occupancyGridMapping(double Robotx, double Roboty, double Robottheta, doubl
             //double yi = -(y * gridHeight + gridHeight / 2) + robotYOffset;
             //3- TODO: Check if each cell falls under the perceptual field of the measurements
     
-    
+        for (int x = 0; x < mapWidth / gridWidth; x++) { //1
+        for (int y = 0; y < mapHeight / gridHeight; y++) { //1
+            double xi = x * gridWidth + gridWidth / 2 - robotXOffset; //2
+            double yi = -(y * gridHeight + gridHeight / 2) + robotYOffset; //2
+            if (sqrt(pow(xi - Robotx, 2) + pow(yi - Roboty, 2)) <= Zmax) { //3
+                l[x][y] = l[x][y] + inverseSensorModel(Robotx, Roboty, Robottheta, xi, yi, sensorData) - l0;
+            }
+        }
+    }
     
     
     
