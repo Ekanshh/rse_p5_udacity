@@ -1,7 +1,11 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include "src/matplotlibcpp.h" //Graph Library
+
 using namespace std;
+namespace plt = matplotlibcpp;
+
 
 // Sensor characteristic: Min and Max ranges of the beams
 double Zmax = 5000, Zmin = 170;
@@ -81,11 +85,36 @@ void occupancyGridMapping(double Robotx, double Roboty, double Robottheta, doubl
                 l[x][y] = l[x][y] + inverseSensorModel(Robotx, Roboty, Robottheta, xi, yi, sensorData) - l0;
             }
         }
+    }   
+}
+
+void visualization()
+{
+    //TODO: Initialize a plot named Map of size 300x150
+    plt::title("Map");
+    //plt::figure_size(300, 150);
+    plt::xlim(0, (int)(mapWidth / gridWidth));
+    plt::ylim(0, (int)(mapHeight / gridHeight));
+
+    // Draw every grid of the map:
+    for (double x = 0; x < mapWidth / gridWidth; x++) {
+        cout << "Remaining Rows= " << mapWidth / gridWidth - x << endl;
+        for (double y = 0; y < mapHeight / gridHeight; y++) {
+            if (l[x][y] == 0) { //Green unkown state
+                plt::plot({ x }, { y }, "g.");
+            }
+            else if (l[x][y] > 0) { //Black occupied state
+                plt::plot({ x }, { y }, "k.");
+            }
+            else { //Red free state
+                plt::plot({ x }, { y }, "r.");
+            }
+        }
     }
-    
-    
-    
-    
+   
+    //TODO: Save the image and close the plot 
+    plt::save("./Images/Image.png");
+    plt::clf();
 }
 
 int main()
@@ -94,8 +123,8 @@ int main()
     double measurementData[8];
     double robotX, robotY, robotTheta;
 
-    FILE* posesFile = fopen("poses.txt", "r");
-    FILE* measurementFile = fopen("measurement.txt", "r");
+    FILE* posesFile = fopen("Data/poses.txt", "r");
+    FILE* measurementFile = fopen("Data/measurement.txt", "r");
 
     // Scanning the files and retrieving measurement and poses at each timestamp
     while (fscanf(posesFile, "%lf %lf %lf %lf", &timeStamp, &robotX, &robotY, &robotTheta) != EOF) {
@@ -106,12 +135,16 @@ int main()
         occupancyGridMapping(robotX, robotY, (robotTheta / 10) * (M_PI / 180), measurementData);
     }
     
-    // Displaying the map
+    /* Displaying the map
     for (int x = 0; x < mapWidth / gridWidth; x++) {
         for (int y = 0; y < mapHeight / gridHeight; y++) {
             cout << l[x][y] << " ";
         }
-    }
+    }*/
     
+    //visualize the map
+    cout << "Wait for the image to generate" << endl;
+    visualization();
+    cout << "Done!" << endl;
     return 0;
 }
