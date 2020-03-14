@@ -27,4 +27,14 @@ Now, wait for the program to generate the map and store it in the `/home/workspa
 
 <img src="/map_alg/Images/Image.png" height=500 >
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+#### Commit c7edeb5: 
+Added **Multiple Sensor Fusion** algorithm _written in C++_. To run the program, _Compile_ it using : ` $ g++ OCM.cpp -o app -std=c++11` and then _run_ it using: `./app`. 
+
+The output will display a matrix:
+```
+0.93 0.76 
+0.46 0.65 
+```
 
