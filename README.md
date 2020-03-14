@@ -2,7 +2,7 @@
 
 # Introduction
 This repository has reference to the project **Map My World** of the [Robotics Software Engineer Nanodegree](https://www.udacity.com/course/robotics-software-engineer--nd209) program offered by [Udacity](https://www.udacity.com/).
-This branch [map_alg](https://github.com/Ekanshh/rse_p5_udacity.git) contains the algorithm used for [Occupancy Grid Mapping](https://en.wikipedia.org/wiki/Occupancy_grid_mapping), _written in [C++](https://en.wikipedia.org/wiki/C%2B%2B)_.  
+This branch [map_alg](https://github.com/Ekanshh/rse_p5_udacity/tree/map_alg) contains the algorithm used for [Occupancy Grid Mapping](https://en.wikipedia.org/wiki/Occupancy_grid_mapping), _written in [C++](https://en.wikipedia.org/wiki/C%2B%2B)_.  
 
 ## Steps to Launch the Algorithm Visualization 
 
@@ -30,7 +30,7 @@ Now, wait for the program to generate the map and store it in the `/home/workspa
 -----------------------------------------------------------------------------------------------------------------------------
 
 #### Commit c7edeb5: 
-Added **Multiple Sensor Fusion** algorithm _written in C++_. To run the program, _Compile_ it using : ` $ g++ OCM.cpp -o app -std=c++11` and then _run_ it using: `./app`. 
+Added [Multiple Sensor Fusion](https://github.com/Ekanshh/rse_p5_udacity/blob/map_alg/map_alg/sensor_fusion.cpp) algorithm _written in C++_. To run the program, _compile_ it using : ` $ g++ OCM.cpp -o app -std=c++11` and then _run_ it using: `./app`. 
 
 The output will display a matrix:
 ```
