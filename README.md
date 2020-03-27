@@ -53,7 +53,7 @@ A screenshot is given below.
 ![](https://github.com/Ekanshh/rse_p5_udacity/blob/master/Images/my_world.png)
 
 ## Results
-Due to GitHub file size limitation, 3D maps are stored on Google drive:
+Due to GitHub file size limitation, map database is stored on Google drive:
 - Custom World: [https://drive.google.com/open?id=1vHGxwUqMJK-WpbB8oHgOpej0Y5n8AEqI](https://drive.google.com/open?id=1vHGxwUqMJK-WpbB8oHgOpej0Y5n8AEqI)
 
 | 2D Map                                                                       | 3D Map                                          |
@@ -93,4 +93,4 @@ Note: To stop mapping, we have to hit `ctrl+c` to terminate the mapping node, wh
 Simply closing the mapping node terminal window will not save the map, hence `rtabmap-databaseViewer` will also show an empty map.
 
 ----------
-Readme Credits: [Heming Chen](https://github.com/hemingchen)
+_Readme Source: [Heming Chen](https://github.com/hemingchen)_
