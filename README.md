@@ -81,7 +81,7 @@ catkin_make
 
 `roslaunch my_robot world.launch`
 
-`rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+`roslaunch teleop_twist_keyboard teleop.launch`
 
 `roslaunch rtabmap mapping.launch`
 
