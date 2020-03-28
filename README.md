@@ -89,6 +89,18 @@ catkin_make
 Add `Robot Model`.
 Add `Map` and select the topic `/map`
 
+4. The `rtabmap-databaseViewer` is a great tool for exploring your database when you are done generating it.
+
+`rtabmap-databaseViewer ~/.ros/rtabmap.db `
+
+Once open, we will need to add some windows to get a better view of the relevant information, so:
+
+```
+Say yes to using the database parameters
+View -> Constraint View
+View -> Graph View
+```
+
 Note: To stop mapping, we have to hit `ctrl+c` to terminate the mapping node, which upon shutting down will print that map has been saved to hard drive. 
 Simply closing the mapping node terminal window will not save the map, hence `rtabmap-databaseViewer` will also show an empty map.
 
